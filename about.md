@@ -1,5 +1,8 @@
+# Breif Version
+
 This club provides a community for those interested in computer simulations, high-performance computing, or other software related to science. We engage in club programming projects, host workshops and presentations, compete in hackathons, and more!
 
+# Detailed Version
 
 This club provides a community for those interested in computer simulations, high-performance computing, or other software related to science. We are mainly focused on four areas: projects, workshops and presentations, events, and community.
 
