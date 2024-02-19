@@ -1,6 +1,6 @@
 # Scientific Computing Student Club: Board Meeting Agenda
 
-Date: 1-21-24
+Date: 2-21-24
 ## Board Members
 - President - Jacob Pavelka (jpavelka@umich.edu)
 - Vice-President - Sam Cochran (samco@umich.edu)
@@ -19,6 +19,9 @@ Date: 1-21-24
 |-|-|-|
 |[CC-1]|  [W24.009](/memorandums/W24-009.md)|Presidential Monthly Report|
 |[CC-1]|  [W24.009](/memorandums/W24-0010.md)|Social Media for SC2|
+
+## GC: General Communications
+A time for general news or discussions
 ## CA: Consent Agenda
 |Agenda Item|Document No.| Information|
 |-|-|-|
