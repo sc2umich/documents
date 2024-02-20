@@ -3,6 +3,7 @@
 - Board Meeting 1 | [agenda](bm1/ma_1.md)
 - Board Meeting 2 | [agenda](bm2/ma_2.md)
 - Board Meeting 3 | [agenda](bm3/ma_3.md)
+- Board Meeting 4 | [agenda](bm4/ma_4.md)
 
 # Club Meetings
 ## Winter 2024
