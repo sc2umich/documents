@@ -18,7 +18,7 @@ Date: 2-21-24
 |Agenda Item|Document No.| Information|
 |-|-|-|
 |[CC-1]|  [W24.009](/memorandums/W24-009.md)|Presidential Monthly Report|
-|[CC-1]|  [W24.009](/memorandums/W24-0010.md)|Social Media for SC2|
+|[CC-2]|  [W24.010](/memorandums/W24-010.md)|Social Media for SC2|
 
 ## GC: General Communications
 A time for general news or discussions
