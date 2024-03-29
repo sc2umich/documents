@@ -1,0 +1,1 @@
+[spotlight poster](pr/spotlight.svg)

@@ -6,6 +6,8 @@ Welcome to the documents page
 
 ### [Constitution](constitution/w24.md)
 
-### [Projects](projects/project.md)
+### [Projects](projects/projects.md)
 
 ### [Meeting Documents](meetings/meetings.md)
+
+### [Promotional Material](pr/pr.md)
