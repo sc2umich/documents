@@ -9,3 +9,5 @@ Welcome to the documents page
 ### [Projects](projects/projects.md)
 
 ### [Meeting Documents](meetings/meetings.md)
+
+### [Promotional Material](pr/pr.md)
