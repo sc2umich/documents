@@ -1,12 +1,12 @@
 # Scientific Computing Student Club: Board Meeting Agenda
 
-Date: 4-24-24
+Date: 4-17-24
 
 Time: 5:30-6:30
 
 Zoom: 97263869217
 
-Location: TBD
+Location: Duderstadt 1120A
 ## Board Members
 - President - Jacob Pavelka (jpavelka@umich.edu)
 - Vice-President - Sam Cochran (samco@umich.edu)
@@ -34,3 +34,7 @@ A time for general news or discussions
 ## DC: New Business
 |Agenda Item|Document No.| Information|
 |-|-|-|
+|[DC-1]|  [W24.015](../legislation/W24-015.md)|Approval of Summer club meeting schedule
+|||Sponsor: Jacob (4/12/24)
+|[DC-2]|  [W24.016](../legislation/W24-016.md)|Approval of Summer board meeting schedule
+|||Sponsor: Jacob (4/12/24)
