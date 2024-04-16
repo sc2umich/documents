@@ -23,7 +23,10 @@ Location: Duderstadt 1120A
 ## CC: Communications From Committees
 |Agenda Item|Document No.| Information|
 |-|-|-|
-|[CC-1]|  [W24.014](../memorandums/W24-014.md)|Presidential Monthly Report|
+|[CC-1]|  Informational Presentation|Overview of Club Activities|
+|[CC-2]|  N/A|Comments from Professor Kochunas and Dr. Gaston|
+|[CC-3]|  [W24.014](../memorandums/W24-014.md)|Presidential Monthly Report|
+|[CC-4]|  [W24.017](../memorandums/W24-017.md)|North Campus Flyer Locations|
 
 ## GC: General Communications
 A time for general news or discussions
