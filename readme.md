@@ -11,3 +11,5 @@ Welcome to the documents page
 ### [Meeting Documents](meetings/meetings.md)
 
 ### [Promotional Material](pr/pr.md)
+
+### [Workshops](workshops/index.md)
