@@ -4,7 +4,7 @@ Welcome to the documents page
 
 ### [How to Use this Repo](howto.md)
 
-### [Constitution](constitution/w24.md)
+### [Constitution](constitution/index.md)
 
 ### [Projects](projects/projects.md)
 
