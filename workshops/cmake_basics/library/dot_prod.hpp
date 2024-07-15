@@ -1,0 +1,1 @@
+double dot_prod(double* v1, double* v2, int length);
