@@ -14,3 +14,6 @@ Meeting 2: Deal II
 ## Summer 2024
 Meeting 2: Quantum Circuits
 - All guides are available in downloadable jupyter notebooks
+
+Meeting 2: CMake Basics
+- [Guide](cmake_basics/readme.md)
