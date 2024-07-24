@@ -36,9 +36,15 @@ A time for general news or discussions
 |Agenda Item|Document No.| Information|
 |-|-|-|
 |[DC-0] | [S24.006](../legislation/S24-006.md)| Establishment of Training Program for Newly Elected Officers |
-|||Sponsor: Jacob (6/26/24)|
+|(2nd read.)||Sponsor: Jacob (6/26/24)|
 |[DC-1] | [S24.004](../legislation/S24-004.md)| Extending Duration of General Meetings |
-|||Sponsor: Jacob (6/26/24)|
+|(2nd read.)||Sponsor: Jacob (6/26/24)|
 |[DC-2] | [S24.007](../legislation/S24-007.md)|Acquisition of Dedicated Equipment for General Meetings |
-|||Sponsor: Jacob (6/26/24)|
+|(2nd read.)||Sponsor: Jacob (6/26/24)|
+|[DC-3] | [S24.010](../legislation/S24-010.md)|Restructuring General Meeting Format for the Next Semester|
+|(1st read.)||Sponsor: Jacob (7/24/24)|
+|[DC-4] | [S24.011](../legislation/S24-011.md)|Approval of Fall Semester Board Meeting Schedule|
+|(1st read.)||Sponsor: Jacob (7/24/24)|
+|[DC-5] | [S24.012](../legislation/S24-012.md)|Approval of Fall Semester Club Meeting Schedule|
+|(1st read.)||Sponsor: Jacob (7/24/24)|
 
