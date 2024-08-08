@@ -1,0 +1,1 @@
+maze page is a good resource for keeping track of people/attendance and advertising events. However, there are a lot of features that aren't highlighted. If you ever want to reference how to get the full use of maize page, the software is called engage from campus lab, and they have more documentation.

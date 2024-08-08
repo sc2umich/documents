@@ -1,1 +1,2 @@
 - [Chapter X: Purchases](purchases.md)
+- [Chapter X: Maize Page](maize_page.md)
