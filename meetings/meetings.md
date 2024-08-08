@@ -10,6 +10,7 @@
 ## Summer 2024
 - Board Meeting 8 | [agenda](ma_8.md)
 - Board Meeting 9 | [agenda](ma_9.md)
+- Board Meeting 10 | [agenda](ma_10.md)
 
 # Club Meetings
 ## Winter 2024
