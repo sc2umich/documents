@@ -6,7 +6,7 @@ Welcome to the documents page
 
 ### [Constitution](constitution/index.md)
 
-### [Projects](projects/projects.md)
+### [Projects](projects/projects.md)gi
 
 ### [Meeting Documents](meetings/meetings.md)
 
