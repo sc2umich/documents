@@ -13,3 +13,7 @@ Welcome to the documents page
 ### [Promotional Material](pr/pr.md)
 
 ### [Workshops](workshops/index.md)
+
+### [Memorandums](memorandums/memos.md)
+
+### [Legislation](legislation/legislation.md)
