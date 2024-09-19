@@ -12,6 +12,9 @@
 - Board Meeting 9 | [agenda](ma_9.md)
 - Board Meeting 10 | [agenda](ma_10.md)
 
+## Fall 2024
+- Board Meeting 11 | [agenda](ma_11.md)
+
 # Club Meetings
 ## Winter 2024
 - Club Meeting 1 | [Workshop](w24/m1/demo_cs.md)
