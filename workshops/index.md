@@ -17,3 +17,7 @@ Meeting 2: Quantum Circuits
 
 Meeting 2: CMake Basics
 - [Guide](cmake_basics/readme.md)
+
+## Winter 2025
+Meeting 1: Python Packaging
+- [Guide](python_packaging/workshop.md)
