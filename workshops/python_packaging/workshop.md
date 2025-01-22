@@ -82,7 +82,7 @@ The difference between these is that numpy is a collection of modules or even mo
 
     import numpy.linalg
 
-It is actually very simple to create our own package; all we have to do is place our modules into a folder called `geometry` with an `__init__.py` file. Now, when we run our `line.py` file, we get an error because the location of our modules have changed and are now withing a package.
+It is actually very simple to create our own package; all we have to do is place our modules into a folder called `geometry_uniqname` with an `__init__.py` file. Now, when we run our `line.py` file, we get an error because the location of our modules have changed and are now withing a package.
 
 We have to change our import statements to
 
@@ -135,12 +135,91 @@ To put our `geometry` package in a place python expects to find it, we will want
 
 Of course, if you dont have any components that need to be compiled, you have other options available too, but python will always use a wheel file first if it is available.
 
-Before we can build our package, we will first need to give a little extra information to python. The basic file needed is a `pyproject.toml` (toms obvious markup language) or a `setup.py` (older method), which will contain build information and meta data. `toml` is broken up into categories using brackets `[category 1]`, and in each category, settings can be specified.
+Before we can build our package, we will first need to give a little extra information to python. The basic file needed is a `pyproject.toml` (toms obvious, minimal language) or a `setup.py` (older method), which will contain build information and meta data. `toml` is broken up into tables using brackets `[category 1]`, and in each, key/value pairs can be specified to change settings.
 
     [project]
     name = "example_package_YOUR_USERNAME_HERE"
     version = "0.0.1"
 
+The important tables to define are:
+ - `[build-system]`: defines which "backend" build system and build dependencies you will used to create wheels
+ - `[project]`: Project metadata (e.g. author, name, versions supprted)
+ - `[project.optional-dependencies]`: additional dependencies (e.g. numpy) if the user wants to take advantage of special features (e.g. fast matmul). The standard dependencies will be located in the `[project]` table.
+
+Here is our minimum working example:
+
+    [build-system]
+    requires = ["hatchling"]
+    build-backend = "hatchling.build"
+
+    [project]
+    name = "geometry_[uniqname]"
+    version = "0.0.1"
+    authors = [
+    { name="your name", email="uniqname@umich.edu" },
+    ]
+    description = "A small example package"
+    requires-python = ">= your version"
+    classifiers = [
+        "Programming Language :: Python :: 3",
+        "Operating System :: OS Independent",
+    ]
+    license = "MIT"
+    dependencies = [
+        ...
+    ]
+
+Now that we have that basic information set up, python will know how to build our package, allowing it to make a wheel file and also a compressed folder of all of our source files (this is the other method of sharing code). First we need to install the build module from python. If you are on linux or macOS and didn't install from source, you might have to install pip separately (`apt install python3-pip`)
+
+    py -m pip install build
+    py -m build
+
+We did it! Now, we just need to install it, which requires the `wheel` package if you don't already have it.
+
+    py -m pip list
+    py -m pip install whl  
+    py -m pip list
+
+Share the `wheel` and `tar.gz` with all your friends! They can install it in the same way. We can verify this works by running our previous test, and you will see that even if we delete our original source files, the test still passes!
+
+## Step 5 - Edit mode installation
+
+Snap, you made a mistake in your development and now you have to rebuild and reinstall the package. This can be a tedious process
+
+    py -m build
+    py -m pip install dist\geometry_jpavelka-0.0.1-py3-none-any.whl --force-reinstall
+
+Thankfully, there is an "edit mode", which is a much easier way to use an installed package without having to rebuild it constantly. To install your package in edit mode add the `-e` flag to your pip install with the target being the directory of the package
+
+    py -m pip install . -e
+
+Now, we can change the source files in the installed version of the package, which ideal for developement where updates, testing, and mistakes are cyclical.
+
+## Step 6 - uploading to a repository
+
+
+
+## Step 5 - Extra reading
+
+If you want to see a good standard for laying out scientific computing projects, check out [pyOpenSci](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html)
+
+    myPackageRepoName
+    ├── CHANGELOG.md               ┐
+    ├── CODE_OF_CONDUCT.md         │
+    ├── CONTRIBUTING.md            │
+    ├── docs                       │ Package documentation
+    │   └── index.md
+    │   └── ...                    │
+    ├── LICENSE                    │
+    ├── README.md                  ┘
+    ├── pyproject.toml             ] Package metadata and build configuration
+    ├── src                        ┐
+    │   └── myPackage              │
+    │       ├── __init__.py        │ Package source code
+    │       ├── moduleA.py         │
+    │       └── moduleB.py         ┘
+    └── tests                      ┐
+    └── ...                        ┘ Package tests
 
 ### scr layout vs flat layout
 
@@ -164,25 +243,3 @@ cons
     docs/
 pros
 - 
-
-## Step 5 - Extra reading
-
-If you want to see a good standard for laying out scientific computing projects, check out [pyOpenSci](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html)
-
-    myPackageRepoName
-    ├── CHANGELOG.md               ┐
-    ├── CODE_OF_CONDUCT.md         │
-    ├── CONTRIBUTING.md            │
-    ├── docs                       │ Package documentation
-    │   └── index.md
-    │   └── ...                    │
-    ├── LICENSE                    │
-    ├── README.md                  ┘
-    ├── pyproject.toml             ] Package metadata and build configuration
-    ├── src                        ┐
-    │   └── myPackage              │
-    │       ├── __init__.py        │ Package source code
-    │       ├── moduleA.py         │
-    │       └── moduleB.py         ┘
-    └── tests                      ┐
-    └── ...                        ┘ Package tests
