@@ -10,20 +10,24 @@ Python files can be separated into two groups: modules, which are imported by ot
     import my_module
     import my_script
 
-At this point, the entirety of that script/file is ran and its outputs can be access by from the script you're running, and to showcase this, we will create two files: a.py
+Modules are usefule because they allow us to better organize and compartmentalize our code. At this point, the entirety of that script/file is ran and its outputs can be access by from the script you're running, and to showcase this, we will create two files: a.py
 
     foo = 6
 
 and `b.py`
+
     import a
+    foo = 20
+    print(foo)
     print (a.foo)
 
 If we run `a.py`, nothing outputs because only a variable was written to memory. However, if we run `b.py`, we can use the information from `a.py`. There are a few things to note here:
 
 - when we ran `a.py`, it was considered a script
 - when we ran `b.py`, it was considered a script, but we imported `a.py`, making it a module in this scenario
+- we have two variables named foo, but since we used a module, they have separate name spaces (`foo` and `a.foo`) and dont overwrite each other
 
-Technically, every file is a module because even the script you're running is considered the main module. If we put `print(__name__)` into each of our files and run each of our files, we can see how this works.
+Technically, every file is a module because even the script you're running is considered the main module. If we put `print(__name__)` into each of our files, we can see how this works.
 
 With this terminology out of the way, let's now make some useful python files we can eventually turn into packages. For this package, we will create a series of objects that build up to make 3-D geometry, each of which will be in separate files for organization purposes. We will start with vertices:
 
@@ -55,7 +59,7 @@ and edges, which are made up of two vertices:
             ]
             return vertex.Vertex(*new_position)
 
-Each of these are in separate files `vertex.py` and `edge.py`, respectively. Let us put them to the test by creating a line in space and bisecting it in a script called `line.py`
+Each of these are in separate files `vertex.py` and `edge.py`, respectively. Let us get some use out of these files by creating a line in space and bisecting it in a script called `line.py`
 
     import vertex
     import edge
@@ -72,13 +76,13 @@ making sure all the files are in the same folder our command line is in, we can 
 
 ## Step 2 - My first package
 
-Let's now create a more organized set of files by organizing them into a package. You have likely seen many packages in your time using Python; some of the most popular are `numpy` or `pandas`. When you import these packages, it looks much the same as when you import a module:
+Let's now create a more organized set of files by organizing them into a package. Packages are important because they separate the core functionality from use-cases; they separate scripts from modules so that everything you might want to import is in one place. You have likely seen many packages in your time using Python; some of the most popular are `numpy` or `pandas`. When you import these packages, it looks much the same as when you import a module:
 
     import numpy
     # vs
     import vertex
 
-The difference between these is that numpy is a collection of modules or even more packages
+The difference between these is that numpy is a collection of modules or even more packages:
 
     import numpy.linalg
 
@@ -121,7 +125,7 @@ note when using relative paths, the path starts from where the interpreter is la
 
 ## Step 4 - building your package
 
-To put our `geometry` package in a place python expects to find it, we will want to build and install it. Python isn't a compiled language so it seems weird to talk about building it, but the language actually relies on compiled languages quite often (e.g. numpy uses BLAS). To take out the complications of building the compiled parts of these packages, Python inventied the wheel file, which is essentially everything already compiled and ready to be installed. If you ever install a package, youll probably see something about a wheel.
+To put our `geometry` package in a place python expects to find it, we will want to build and install it. Python isn't a compiled language so it seems weird to talk about building it, but the language actually relies on compiled languages quite often (e.g. numpy uses BLAS). To take out the complications of building the compiled parts of these packages (see the CMAKE tutorial), Python inventied the wheel file, which is essentially everything already compiled and ready to be installed. If you ever install a package, youll probably see something about a wheel.
 
     pip install numpy
     Collecting numpy
@@ -197,6 +201,25 @@ Now, we can change the source files in the installed version of the package, whi
 
 ## Step 6 - uploading to a repository
 
+Now we want to make our package easily installable for others by uploading it to a repository. The most famous python repository is the python package index or PyPI (this is where pip pulls packages from), but conda and source forge are also common. 
+
+Additionally, you can upload it to your github page for people to download and install manually.
+
+Here we will briefly cover how to upload it to a test version of PyPI, essentially following this [guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/#uploading-the-distribution-archives), but be warned, it takes some time to set up your user account with 2FA and all.
+
+First, make sure pip, twine, and package are up to date
+
+    py -m pip install -U pip
+    py -m pip install -U package
+    py -m pip install -U twine
+
+then simply use twine with the correct arguments to upload the package. You will have to enter your api key to successfully upload.
+
+    py -m twine upload --repository testpypi dist/*
+
+Now we can test out the download, but there will be a few more steps since we uploaded our package to the test directory instead of the real one.
+
+    py -m pip install --index-url https://test.pypi.org/simple/ geometry_jpavelka
 
 
 ## Step 5 - Extra reading
@@ -224,10 +247,18 @@ If you want to see a good standard for laying out scientific computing projects,
 ### scr layout vs flat layout
 
 #### src layout
-    src/
-        package/
-    tests/
-    docs/
+    .
+    ├── README.md
+    ├── noxfile.py
+    ├── pyproject.toml
+    ├── setup.py
+    ├── src/
+    │    └── awesome_package/
+    │       ├── __init__.py
+    │       └── module.py
+    └── tools/
+        ├── generate_awesomeness.py
+        └── decrease_world_suck.py
 
 pros
 - can fully test the installed version, eliminating issues that can be missed in development
@@ -237,9 +268,24 @@ cons
 - cannot be easily used from the command line when developing
 
 #### flat layout
-    
-    package/
-    tests/
-    docs/
+    .
+    ├── README.md
+    ├── noxfile.py
+    ├── pyproject.toml
+    ├── setup.py
+    ├── awesome_package/
+    │   ├── __init__.py
+    │   └── module.py
+    └── tools/
+        ├── generate_awesomeness.py
+        └── decrease_world_suck.py
 pros
-- 
+- can run package from command line
+
+cons
+- adds readme and other configration files on the import path
+
+## Sources
+[Python Packaging User Guide](https://packaging.python.org/en/latest/)
+
+[pyOpenSci Packaging User Guide](https://www.pyopensci.org/python-package-guide/package-structure-code/intro.html)
