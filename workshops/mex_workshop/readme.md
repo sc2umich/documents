@@ -20,7 +20,7 @@ MEX files can be created from C,C++, or FORTRAN files. C++ is generally recommen
 
 [FORTRAN](https://www.mathworks.com/help/matlab/call-mex-fortran.html)
 
-Here is our [example C file](/hello.cpp)
+Here is our [example C file](./hello.cpp)
 
  ```c
 #include "mex.h"
