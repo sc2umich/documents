@@ -4,6 +4,7 @@
 If you have an older version (2017a or newer) or a different OS you can still work with MEX files, but you will need to manually configure your compiler.
 
 -For Windows OS with older versions of MATLAB, see the information in the MinGW-w64 Add On page linked below.
+
 -For other OS, see the information linked [here](https://www.mathworks.com/support/requirements/supported-compilers-mac.html)
 
 ### Install MinGW-w64 Support from Add-On Explorer
