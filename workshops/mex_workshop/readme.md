@@ -1,6 +1,6 @@
 # Step 0: Prerequisites
 
-### MATLAB 64-bit 2023a or newer
+### MATLAB for Windows 64-bit 2023a or newer
 If you have an older version (2017a or newer) or a different OS you can still work with MEX files, but you will need to manually configure your compiler.
 
 -For Windows OS with older versions of MATLAB, see the information in the MinGW-w64 Add On page linked below.
