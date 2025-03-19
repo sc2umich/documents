@@ -21,3 +21,6 @@ Meeting 2: CMake Basics
 ## Winter 2025
 Meeting 1: Python Packaging
 - [Guide](python_packaging/workshop.md)
+
+Meeting 3: Compiling matlab functions
+- [Guide](mex_workshop/readme.md)
