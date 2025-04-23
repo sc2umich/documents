@@ -1,13 +1,32 @@
 # Step 0: Prerequisites
+Your MATLAB may already be configured to work with MEX files. To check if it is, simply type
 
-### MATLAB 64-bit 2023a or newer
-If you have an older version (2017a or newer) or a different OS you can still work with MEX files, but you will need to manually configure MinGW
+```
+mex -setup
+```
+
+in the MATLAB CLI. If it says something like "Mex configured to use 'X' for C Langugage Compilation" then you should be good to go! Otherwise, it might offer a list of installed compilers and ask you to select one. 
+
+	-For Windows OS, Visual Studio is recommended. 
+	-For Mac, XCode is recommended. 
+	-For Linus, GCC is recommended
+
+If you don't have a compiler installed, MATLAB supports automatic installation and setup of the MinGW Compiler for 64-bit Windows on 2023a or newer.
+
+### MATLAB for Windows 64-bit 2023a or newer
+If you have an older version (2017a or newer) or a different OS you can still work with MEX files, but you will need to manually configure your compiler.
+
+-For Windows OS with older versions of MATLAB, see the information in the MinGW-w64 Add On page linked below.
+
+-For other OS, see the information linked [here](https://www.mathworks.com/support/requirements/supported-compilers-mac.html)
 
 ### Install MinGW-w64 Support from Add-On Explorer
 [MinGW-w64 Add-On](https://www.mathworks.com/matlabcentral/fileexchange/52848-matlab-support-for-mingw-w64-c-c-fortran-compiler?s_tid=srchtitle_support_results_1_mingw64)
 If you have issues, try launching MATLAB with administrator privileges.
 
 Simply click "Install" in the upper right of the download page and the compiler will automatically configure itself. This may take a few minutes.
+
+Here is a [link](https://www.mathworks.com/help/matlab/matlab_external/integrate-matlab-with-external-programming-languages-and-systems.html) to an overview of using external languages with MATLAB (includes both compiled and runtime use cases).
 
 
 # Step 1: Write your code in the language of your choice
@@ -103,7 +122,7 @@ Our example is pretty simple. For a realistic project, you might need to use com
 ```
 mex hello.cpp -output "greeting"
 ```
-then the MEX file will instead be called "greeting.mexw64". See the mex documentation linked about for the full list of supported compiler options.
+then the MEX file will instead be called "greeting.mexw64". See the mex documentation linked above for the full list of supported compiler options.
 
 # Step 3: Calling your code
 
