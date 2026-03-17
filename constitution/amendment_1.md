@@ -1,4 +1,4 @@
-# 1st Ammendment
+# 1st Amendment
 
 ## Section Modifications
 
